@@ -10,7 +10,7 @@ username:admin password=mozio2024
 
 ### Make API calls against the server
 
-Go to [https://mozio.tunn.dev/swagger](https://mozio.tunn.dev/swagger) to see Swagger documentation for API endpoints.
+Go to [http://54.173.189.237:8000/swagger/](http://54.173.189.237:8000/swagger/) to see Swagger documentation for API endpoints.
 
 In order to get service areas for a given `lng` and `lat`,
 1. Find `search_service_areas` endpoint.
