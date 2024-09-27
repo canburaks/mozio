@@ -3,7 +3,7 @@
 ## Quick Validation
 
 ### Access Django admin
-Go to [https://mozio.tunn.dev/admin](https://mozio.tunn.dev/admin) and login to the dashboard using the credentials given below
+Go to [http://54.173.189.237:8000/admin](http://54.173.189.237:8000/admin) and login to the dashboard using the credentials given below
 ```
 username:admin password=mozio2024
 ```
