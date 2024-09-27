@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "mozio"
+version = "0.1.0"
+description = "mozio task project"
+authors = ["Can Burak Sofyalioglu <canburak@msn.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.1.1"
+django-environ = "*"
+djangorestframework = "^3.15.2"
+gunicorn = "^23.0.0"
+drf-yasg = "^1.21.7"
+django-filter = "^24.3"
+django-extensions = "^3.2.3"
+python-dotenv = "^1.0.1"
+django-stubs = "^5.1.0"
+psycopg2 = "^2.9.9"
+gdal = "^3.9.2"
+djangorestframework-gis = "^1.1"
+django-cors-headers = "^4.4.0"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.4.0"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.6.1"
+factory-boy = "^3.3.1"
+django-stubs = "^5.1.0"
+mypy = "^1.11.2"
+djangorestframework-stubs = "^3.15.1"
+autopep8 = "^2.3.1"
+flake8 = "^7.1.1"
+isort = "*"
+django-nose = "^1.4.7"
+bpython = "^0.24"
+drf-yasg-stubs = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

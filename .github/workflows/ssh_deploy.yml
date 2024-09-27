@@ -1,0 +1,34 @@
+name: Deploy Staging via SSH
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, 
+      # so your workflow can access it
+      - uses: actions/checkout@v2
+
+      - name: write .env files
+        run: echo "${{ secrets.ENV_STAGING }}" > .env
+
+      # Copying files and artifacts via SSH
+      - name: Copying files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          rm: true
+          source: ".env,./"
+          target: "/app/gradoo-backend"
+      - name: Build and Restart Container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: cd /app/gradoo-backend && docker-compose build && docker-compose up -d
